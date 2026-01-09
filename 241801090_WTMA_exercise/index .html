@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Chennai Map with Hotspot</title>
+    </head>
+    <body>
+
+    <h1 style="text-align: center;">Chennai City Map</h1>
+    
+     <style>
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        img {
+            border: 3px solid #555;
+            margin-top: 15px;
+        }
+
+        map area {
+            cursor: pointer;
+        }
+
+        iframe {
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+    </style>
+    <div align="center">
+        <a href="https://en.wikipedia.org/wiki/Chennai" target="centerFrame">
+            About Chennai
+        </a> |
+        <a href="https://en.wikipedia.org/wiki/Marina_Beach" target="centerFrame">
+            Marina Beach
+        </a> |
+        <a href="https://en.wikipedia.org/wiki/T._Nagar" target="centerFrame">
+            T Nagar
+        </a>
+    </div>
+
+    <br>
+
+    <center>
+        <img src="Chennai_map.png"
+             usemap="#chennaiMap"
+             width="40%"
+             height="400">
+    </center>
+    <map name="chennaiMap">
+        <area shape="rect"
+              coords="50,60,180,150"
+              href="https://en.wikipedia.org/wiki/Marina_Beach"
+              target="centerFrame"
+              alt="Marina Beach">
+
+        <area shape="rect"
+              coords="220,80,350,180"
+              href="https://en.wikipedia.org/wiki/T._Nagar"
+              target="centerFrame"
+              alt="T Nagar">
+
+        <area shape="rect"
+              coords="380,200,520,330"
+              href="https://en.wikipedia.org/wiki/Anna_Nagar"
+              target="centerFrame"
+              alt="Anna Nagar">
+    </map>
+
+    <br><br>
+
+    <center>
+        <iframe name="centerFrame"
+                src="https://en.wikipedia.org/wiki/Chennai"
+                width="700"
+                height="500"
+                style="border:2px solid black;">
+        </iframe>
+    </center>
+
+</body>
+</html>
+
+    
+
+</html>
