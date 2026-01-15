@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#667eea, #5a2d82);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #5a2d82;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #764ba2, #667eea);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+
+            var namePattern = /^[A-Za-z]+$/;
+            if (!namePattern.test(fname) || fname.length < 6) {
+                alert("First Name must contain only alphabets and minimum 6 characters");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Enter a valid Email ID");
+                return false;
+            }
+
+            var mobilePattern = /^[0-9]{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must be exactly 10 digits");
+                return false;
+            }
+
+            if (lname === "") {
+                alert("Last Name should not be empty");
+                return false;
+            }
+
+            if (address === "") {
+                alert("Address should not be empty");
+                return false;
+            }
+
+            alert("🎉 Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    
+    <h2>Registration Form</h2>
+    <br>
+    <form onsubmit="return validateForm()">
+        <label>First Name</label>
+        <input type="text" id="fname">
+
+        <label>Last Name</label>
+        <input type="text" id="lname">
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+
+        <label>Address</label>
+        <textarea id="address" rows="3"></textarea>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <footer>
+        © 2025 Registration Website
+    </footer>
+</div>
+
+</body>
+</html>
